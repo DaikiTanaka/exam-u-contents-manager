@@ -25,4 +25,8 @@ class SessionsController < ApplicationController
     end
     render action: :new
   end
+
+  def destroy
+
+  end
 end

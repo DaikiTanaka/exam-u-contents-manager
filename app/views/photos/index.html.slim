@@ -1,2 +1,11 @@
+= button_to 'ログアウトする', controller: :sessions, action: :destroy, method: :delete
+
 h1 写真一覧
 
+= link_to '写真をアップロードする', new_photo_path, id: 'link-to-upload'
+
+ul.photo-list
+  - @photos.each do |photo|
+    li.photo-list-item id="photo-list-item-#{photo.id}"
+      p.photo-title = photo.title
+      = image_tag photo_download_path(photo), class: 'photo-image'

@@ -31,7 +31,7 @@ module UserAuthentication
   end
 
   def require_sign_in
-    redirect_to controller: :session, action: :new unless signed_in?
+    redirect_to controller: :sessions, action: :new unless signed_in?
   end
 
   def require_sign_out
