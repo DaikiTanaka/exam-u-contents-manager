@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   before_action :require_sign_out, except: [:destroy]
 
   include WholeErrorMessage
+  include MyTweetAppAuthentication
 
   def new
     @form = ::Forms::Session.new
@@ -28,6 +29,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
+    delete_my_tweet_app_token
     redirect_to controller: :sessions, action: :new
   end
 

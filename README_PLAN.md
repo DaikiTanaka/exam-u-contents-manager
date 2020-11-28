@@ -184,12 +184,9 @@
 * ユーザー(User)
     * ユーザー名(username)
     * 暗号化済みパスワード(encrypted_password)
-* TwitterUser
-    * ユーザー名(user_id) belongs_to で has_one する？
-    * アクセストークン(access_token)
 * 写真(Photo)
     * タイトル(title)
-    * 写真URL(title)
+    * 写真パス(image_path)
 
 ## サービス
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :oauth do
     get :app
     get :auth_request
+    get :callback
   end
 
 end
