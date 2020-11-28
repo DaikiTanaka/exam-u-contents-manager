@@ -121,16 +121,14 @@ class PhotosShowImageTest < ApplicationSystemTestCase
     visit photo_show_image_path(photo)
     assert_selector 'img'
   end
-end
 
-class PhotosDownloadTest < ApplicationSystemTestCase
-
-  test '[正常系]写真をダウンロードできる' do
-    user = create_user
-    photo = user.photos.create(title: 'テスト1', image_path: 'test/fixtures/files/logo.png')
+  test '[正常系]他のユーザの写真も閲覧できる' do
+    photo_owner = create_user(username: 'photo_owner')
+    photo = photo_owner.photos.create(title: 'テスト1', image_path: 'test/fixtures/files/logo.png')
+    create_user
     login
-    visit photo_download_path(photo)
-    # NOTE:「ダウンロードできた」ことを確認する術が見つからない
+    visit photo_show_image_path(photo)
+    assert_selector 'img'
   end
 
 end

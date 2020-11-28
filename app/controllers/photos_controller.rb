@@ -3,6 +3,8 @@ class PhotosController < ApplicationController
   include WholeErrorMessage
   include MyTweetAppAuthentication
 
+  skip_before_action :require_sign_in, only: [:download, :show_image]
+
   def index
     @photos = current_user.photos.order(created_at: :desc)
   end
@@ -28,11 +30,11 @@ class PhotosController < ApplicationController
   end
 
   def download
-    send_file current_photo.image_abs_path, disposition: 'attachment'
+    send_file current_photo_public.image_abs_path, disposition: 'attachment'
   end
 
   def show_image
-    @photo = current_photo
+    @photo = current_photo_public
     render layout: false
   end
 
@@ -40,6 +42,10 @@ class PhotosController < ApplicationController
 
   def current_photo
     @current_photo ||= current_user.photos.where(id: params[:photo_id]).first
+  end
+
+  def current_photo_public
+    Photo.find(params[:photo_id])
   end
 
 end
