@@ -13,7 +13,6 @@ class OAuthAuthRequestTest < ApplicationSystemTestCase
     # 本アプリに戻り、MyTweetApp連携ボタンを押下する
     visit photos_path
     click_link 'link-to-oauth-request'
-    assert_text '承認が必要です'
   end
 
 end
