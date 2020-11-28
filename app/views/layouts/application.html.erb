@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%= button_to 'ログアウトする', {controller: :sessions, action: :destroy}, {id: 'link-to-sign-out', method: :delete} %>
     <%= yield %>
   </body>
 </html>

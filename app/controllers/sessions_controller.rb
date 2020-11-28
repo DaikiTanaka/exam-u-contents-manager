@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   skip_before_action :require_sign_in
-  before_action :require_sign_out
+  before_action :require_sign_out, except: [:destroy]
 
   include WholeErrorMessage
 
@@ -27,6 +27,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    sign_out
+    redirect_to controller: :sessions, action: :new
   end
+
 end

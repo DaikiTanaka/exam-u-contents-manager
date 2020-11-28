@@ -38,3 +38,15 @@ class SessionsCreateTest < ApplicationSystemTestCase
   end
 
 end
+
+class SessionsDeleteTest < ApplicationSystemTestCase
+
+  test '[正常系]ログアウトできる' do
+    create_user
+    login
+    visit root_path
+    click_on 'link-to-sign-out'
+    assert_current_path '/sessions/new'
+  end
+
+end
