@@ -4,6 +4,7 @@ module UserAuthentication
 
   included do
     before_action :require_sign_in
+    helper_method :signed_in?
   end
 
   protected

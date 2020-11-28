@@ -11,5 +11,6 @@ html
     .notifications
       - flash.each do |k, v|
         p.notification = v
-    = button_to 'ログアウトする', {controller: :sessions, action: :destroy}, {id: 'link-to-sign-out', method: :delete}
+    - if signed_in?
+      = button_to 'ログアウトする', {controller: :sessions, action: :destroy}, {id: 'link-to-sign-out', method: :delete}
     = yield
