@@ -3,11 +3,16 @@ ja:
     models:
       user: ユーザー
       form_session: 認証情報
+      photo: 写真
     attributes:
       user:
         id: ID
         username: ユーザーID
         crypted_password: パスワード
+      photo:
+        id: ID
+        title: タイトル
+        image_path: 写真
   activemodel:
     attributes:
       forms/session:

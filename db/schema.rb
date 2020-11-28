@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_020511) do
+ActiveRecord::Schema.define(version: 2020_11_28_054700) do
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.string "image_path"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
