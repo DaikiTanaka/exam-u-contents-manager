@@ -4,6 +4,13 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
 end
 
+def set_server_host
+  Capybara.app_host = 'http://localhost:3000'
+  Capybara.server_host = 'localhost'
+  Capybara.server_port = '3000'
+  Capybara.always_include_port = true
+end
+
 def create_user(username: 'user1', password: 'password')
   User.create(username: username, password: password)
 end
