@@ -39,7 +39,8 @@ class PhotoTest < ActiveSupport::TestCase
 
   test '[異常系]バリデーション ユーザID 空' do
     photo = Photo.new
-    assert photo.errors[:user_id].present?
+    photo.valid?
+    assert photo.errors[:user].present?
   end
 
   test '[正常系]バリデーション 全ての属性が valid な場合' do
