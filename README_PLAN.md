@@ -105,6 +105,7 @@
   * 理解できているならわざわざ図を書いたりしない
   * 課題文に書いてあることはわざわざ書き直さない
 * スクラムは無理にやらない。1人でやるものじゃない。でもベロシティは測りたい。スケジュールがタイトなので。
+* 対応言語は日本語のみ
 
 
 # トレードオフ
@@ -133,7 +134,8 @@
   * INPUT：Rubyエンジニア選考課題.pdf（機能仕様書的な存在？）
   * OUTPUT：minitest
 * システム：
-  * INPUTとして要件定義レベルのものが無いので、実施しない。
+  * INPUT：Rubyエンジニア選考課題.pdf（機能仕様書的な存在？）
+  * OUTPUT：minitest
 * 受入：
   * INPUT：Rubyエンジニア選考課題.pdf（機能仕様書的な存在？）
   * OUTPUT：不具合が見つかったら minitestへケースを追加
@@ -143,10 +145,16 @@
 
 * 自動でやるもの
   * 単体：バリデーション(minitest)
-  * 結合：画面系(minitest+capybara)
+  * 結合：未定
+  * システム：画面系(minitest+capybara)
 * 手動でやるもの
-  * 結合：外部サービス連携
+  * システム：外部サービス連携
   * ※ 無理な自動化はしない
+
+## テスト環境
+
+* Mac Catalina 10.15.7
+* Safari
 
 
 # 振り返り方針
@@ -179,7 +187,7 @@
 * TwitterUser
     * ユーザー名(user_id) belongs_to で has_one する？
     * アクセストークン(access_token)
-* 写真(Image)
+* 写真(Photo)
     * タイトル(title)
     * 写真URL(title)
 
@@ -209,6 +217,7 @@
 * Ruby https://railsguides.jp/
 * Rails https://docs.ruby-lang.org/ja/2.7.0/doc/index.html
 * minitest https://github.com/seattlerb/minitest
+* システムテスト https://api.rubyonrails.org/v6.0.3.4/classes/ActionDispatch/SystemTestCase.html
 * OAuth https://tex2e.github.io/rfc-translater/html/rfc6749.html
 * コーディング規約 https://www.ruby.or.jp/ja/tech/development/ruby/050_coding_rule.html
 
