@@ -27,7 +27,7 @@ bundle exec rails s
 ## How to run the test suite
 
 ```
-bundle exec rails s
+bundle exec rails test test/**/*_test.rb
 ```
 
 ## Services (job queues, cache servers, search engines, etc.)

@@ -1,0 +1,26 @@
+// Place all the styles related to the photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.photo-list{
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+
+  .photo-list-item {
+    margin: 0 1rem 1rem 0;
+    max-width: 30%;
+    text-align: center;
+    list-style: none;
+
+    .photo-title {
+    }
+
+    .photo-image {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

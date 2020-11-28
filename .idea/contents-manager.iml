@@ -23,6 +23,7 @@
       <excludeFolder url="file://$MODULE_DIR$/public/packs" />
       <excludeFolder url="file://$MODULE_DIR$/public/system" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/uploads" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cache" />
     </content>
@@ -1053,6 +1054,54 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="slim (vbundled(4.1.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/doc" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/benchmarks" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/doc" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/benchmarks" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/doc" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-4.1.0/benchmarks" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slim-rails (vbundled(3.2.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-rails-3.2.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-rails-3.2.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-rails-3.2.0/gemfiles" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-rails-3.2.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-rails-3.2.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-rails-3.2.0/gemfiles" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-rails-3.2.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/slim-rails-3.2.0/gemfiles" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="spring (vbundled(2.1.1)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1143,6 +1192,24 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/sqlite3-1.4.2/faq" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/sqlite3-1.4.2/test" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/sqlite3-1.4.2/rakelib" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="temple (vbundled(0.8.2)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/temple-0.8.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/temple-0.8.2/test" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/temple-0.8.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/temple-0.8.2/test" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/temple-0.8.2/test" />
         </excluded>
       </library>
     </orderEntry>

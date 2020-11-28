@@ -1,0 +1,15 @@
+h1 写真アップロード
+
+= render partial: 'components/whole_error_messages', locals: {messages: whole_error_messages}
+
+= form_with model: @form, url: photos_path, local: true do |f|
+  p
+    |タイトル
+    = f.text_field :title
+  p
+    |写真ファイル
+    = f.file_field :image
+  p
+    = f.submit 'アップロード'
+
+= link_to 'キャンセル', photos_path, id: 'link-to-index'
