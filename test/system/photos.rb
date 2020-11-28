@@ -95,6 +95,14 @@ class PhotosCreateTest < ApplicationSystemTestCase
     click_on 'commit'
     assert_text '写真を入力してください'
     assert_current_path '/photos'
+
+  test '[正常系]キャンセルリンクを押下すると、写真一覧画面へ遷移する' do
+    create_user
+    login
+    visit new_photo_path
+    click_link 'link-to-index'
+    assert_current_path '/photos'
+    assert_text '写真一覧'
   end
 
 end
