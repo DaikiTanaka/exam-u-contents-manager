@@ -67,7 +67,7 @@ class PhotosCreateTest < ApplicationSystemTestCase
     assert_text '写真一覧'
   end
 
-  test '[正常系]タイトルが入力されていないと写真のアップロードに失敗し、写真アップロード画面へ戻る' do
+  test '[正常系]タイトルが入力されていないと写真のアップロードに失敗し、エラーメッセージが表示される' do
     create_user
     login
     visit new_photo_path
@@ -78,7 +78,7 @@ class PhotosCreateTest < ApplicationSystemTestCase
     assert_text '写真アップロード'
   end
 
-  test '[正常系]タイトルが30文字を超えていると写真のアップロードに失敗し、写真アップロード画面へ戻る' do
+  test '[正常系]タイトルが30文字を超えていると写真のアップロードに失敗し、エラーメッセージが表示される' do
     create_user
     login
     visit new_photo_path
@@ -90,7 +90,7 @@ class PhotosCreateTest < ApplicationSystemTestCase
     assert_text '写真アップロード'
   end
 
-  test '[正常系]写真が選択されていないと写真のアップロードに失敗し、写真アップロード画面へ戻る' do
+  test '[正常系]写真が選択されていないと写真のアップロードに失敗し、エラーメッセージが表示される' do
     create_user
     login
     visit new_photo_path
