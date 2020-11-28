@@ -1,0 +1,13 @@
+h1 ログイン
+
+= render partial: 'components/whole_error_messages', locals: {messages: whole_error_messages}
+
+= form_with model: @form, url: sessions_path, local: true do |f|
+  p
+    |ユーザーID
+    = f.text_field :username
+  p
+    |パスワード
+    = f.password_field :password
+  p
+    = f.submit 'ログインする'
