@@ -41,11 +41,14 @@ end
 
 class SessionsDeleteTest < ApplicationSystemTestCase
 
-  test '[正常系]ログアウトできる' do
+  test '[正常系]ログアウトボタンを押下するとログアウトできる' do
     create_user
     login
     visit root_path
     click_on 'link-to-sign-out'
+    assert_current_path '/sessions/new'
+    # 写真一覧へアクセスできない = ログアウトできたことを確認する
+    visit photos_path
     assert_current_path '/sessions/new'
   end
 
