@@ -64,6 +64,7 @@ class PhotosCreateTest < ApplicationSystemTestCase
     attach_file 'test/fixtures/files/logo.png'
     click_on 'commit'
     assert_current_path '/'
+    assert_text '写真一覧'
   end
 
   test '[正常系]タイトルが入力されていないと写真のアップロードに失敗し、写真アップロード画面へ戻る' do
@@ -74,6 +75,7 @@ class PhotosCreateTest < ApplicationSystemTestCase
     click_on 'commit'
     assert_text 'タイトルを入力してください'
     assert_current_path '/photos'
+    assert_text '写真アップロード'
   end
 
   test '[正常系]タイトルが30文字を超えていると写真のアップロードに失敗し、写真アップロード画面へ戻る' do
@@ -85,6 +87,7 @@ class PhotosCreateTest < ApplicationSystemTestCase
     click_on 'commit'
     assert_text 'タイトルは30文字以内で入力してください'
     assert_current_path '/photos'
+    assert_text '写真アップロード'
   end
 
   test '[正常系]写真が選択されていないと写真のアップロードに失敗し、写真アップロード画面へ戻る' do
@@ -95,6 +98,8 @@ class PhotosCreateTest < ApplicationSystemTestCase
     click_on 'commit'
     assert_text '写真を入力してください'
     assert_current_path '/photos'
+    assert_text '写真アップロード'
+  end
 
   test '[正常系]キャンセルリンクを押下すると、写真一覧画面へ遷移する' do
     create_user
