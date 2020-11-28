@@ -24,6 +24,9 @@ bundle exec rails db:create db:migrate db:seed
 bundle exec rails s
 ```
 
+Access http://localhost:3000
+
+
 ## How to run the test suite
 
 ```
