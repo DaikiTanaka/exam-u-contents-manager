@@ -1,6 +1,9 @@
 h1 写真一覧
 
-= link_to '写真をアップロードする', new_photo_path, id: 'link-to-upload'
+p
+  = link_to 'MyTweetAppと連携', oauth_auth_request_path, id: 'link-to-oauth-request'
+p
+  = link_to '写真をアップロードする', new_photo_path, id: 'link-to-upload'
 
 ul.photo-list
   - @photos.each do |photo|
