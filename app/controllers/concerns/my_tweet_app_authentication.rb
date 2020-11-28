@@ -1,6 +1,10 @@
 module MyTweetAppAuthentication
   extend ActiveSupport::Concern
 
+  included do
+    helper_method :my_tweet_app_integrated?
+  end
+
   def my_tweet_app_integrated?
     my_tweet_app_token.present?
   end

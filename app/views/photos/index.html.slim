@@ -10,3 +10,5 @@ ul.photo-list
     li.photo-list-item id="photo-list-item-#{photo.id}"
       p.photo-title = photo.title
       = image_tag photo_download_path(photo), class: 'photo-image'
+      - if my_tweet_app_integrated?
+        = photo_tweet_button(photo)

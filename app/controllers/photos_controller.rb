@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
 
   include WholeErrorMessage
+  include MyTweetAppAuthentication
 
   def index
     @photos = current_user.photos.order(created_at: :desc)
@@ -27,7 +28,12 @@ class PhotosController < ApplicationController
   end
 
   def download
-    send_file current_photo.image_abs_path
+    send_file current_photo.image_abs_path, disposition: 'attachment'
+  end
+
+  def show_image
+    @photo = current_photo
+    render layout: false
   end
 
   private

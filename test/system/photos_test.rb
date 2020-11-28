@@ -111,3 +111,26 @@ class PhotosCreateTest < ApplicationSystemTestCase
   end
 
 end
+
+class PhotosShowImageTest < ApplicationSystemTestCase
+
+  test '[正常系]写真が表示される' do
+    user = create_user
+    photo = user.photos.create(title: 'テスト1', image_path: 'test/fixtures/files/logo.png')
+    login
+    visit photo_show_image_path(photo)
+    assert_selector 'img'
+  end
+end
+
+class PhotosDownloadTest < ApplicationSystemTestCase
+
+  test '[正常系]写真をダウンロードできる' do
+    user = create_user
+    photo = user.photos.create(title: 'テスト1', image_path: 'test/fixtures/files/logo.png')
+    login
+    visit photo_download_path(photo)
+    # NOTE:「ダウンロードできた」ことを確認する術が見つからない
+  end
+
+end
