@@ -54,7 +54,7 @@ class SessionsDeleteTest < ApplicationSystemTestCase
 
   test '[正常系]ログイン画面ではログアウトボタンは非表示とする' do
     visit new_sessions_path
-    assert_nil page.find_button('link-to-sign-out')
+    assert has_no_button?('link-to-sign-out')
   end
 
 end
