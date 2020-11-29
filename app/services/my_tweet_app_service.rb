@@ -3,12 +3,12 @@ require "json"
 
 module MyTweetAppService
 
-  def self.get_token(code:, redirect_uri:)
+  def self.get_token(code:)
     payloads = {
       code: code,
       client_id: OAUTH_CLIENT_ID,
       client_secret: OAUTH_CLIENT_SECRET,
-      redirect_uri: redirect_uri,
+      redirect_uri: OAUTH_REDIRECT_URI,
       grant_type: 'authorization_code'
     }
     uri = URI.parse(OAUTH_TOKEN_REQUEST_URL)
@@ -32,4 +32,12 @@ module MyTweetAppService
     end
   end
 
+  def self.auth_request_url
+    query = {
+      client_id: OAUTH_CLIENT_ID,
+      response_type: 'code',
+      redirect_uri: OAUTH_REDIRECT_URI
+    }.map { |k, v| "#{k}=#{v}" }.join('&')
+    "#{OAUTH_REQUEST_URL}?#{query}"
+  end
 end

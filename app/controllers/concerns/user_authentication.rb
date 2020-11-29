@@ -1,6 +1,5 @@
 module UserAuthentication
   extend ActiveSupport::Concern
-  include PasswordEncryption
 
   included do
     before_action :require_sign_in
@@ -8,12 +7,6 @@ module UserAuthentication
   end
 
   protected
-
-  def authenticate(username, password)
-    User.where(username: username)
-        .where(encrypted_password: encrypt(password))
-        .first
-  end
 
   def sign_in(user)
     session[:current_user_id] = user.id
