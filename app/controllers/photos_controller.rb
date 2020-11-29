@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   skip_before_action :require_sign_in, only: [:download, :show_image]
 
   def index
-    @photos = current_user.photos.order(created_at: :desc)
+    @photos = current_user.photos.recently_created
   end
 
   def new
@@ -14,19 +14,19 @@ class PhotosController < ApplicationController
   end
 
   def create
-    # TODO: refactor this fat controller.
     @form = ::Forms::Photo.new(params.require(:forms_photo).permit(:title, :image))
-    image_path = @form.image ? "data/#{SecureRandom.uuid}#{File.extname(@form.image.original_filename)}" : nil
-    photo = current_user.photos.build(title: @form.title, image_path: image_path)
-    if photo.save
-      File.binwrite(photo.image_abs_path, @form.image.read)
-      redirect_to controller: :photos, action: :index and return
-    else
-      photo.errors.full_messages.each do |msg|
-        add_whole_error_message msg
-      end
-    end
-    render action: :new
+    Photo.create_by_uploaded_file(
+      user: current_user,
+      photo_title: @form.title,
+      uploaded_file: @form.image,
+      when_succeeded: lambda {
+        redirect_to controller: :photos, action: :index
+      },
+      when_failed: lambda { |errors|
+        errors.full_messages.each { |msg| add_whole_error_message msg }
+        render action: :new
+      }
+    )
   end
 
   def download
@@ -41,7 +41,7 @@ class PhotosController < ApplicationController
   private
 
   def current_photo
-    @current_photo ||= current_user.photos.where(id: params[:photo_id]).first
+    @current_photo ||= current_user.find_my_photo_by(id: params[:photo_id])
   end
 
   def current_photo_public

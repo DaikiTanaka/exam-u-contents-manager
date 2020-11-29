@@ -13,18 +13,24 @@ class SessionsController < ApplicationController
   def create
     @form = ::Forms::Session.new(params.require(:forms_session).permit(:username, :password))
     if @form.valid?
-      if (user = authenticate(@form.username, @form.password)).present?
-        sign_in user
-        redirect_to :root and return
-      else
-        add_whole_error_message 'ユーザーIDとパスワードが一致するユーザーが存在しません。'
-      end
+      User.authenticate(
+        username: @form.username,
+        password: @form.password,
+        when_succeeded: lambda { |user|
+          sign_in user
+          redirect_to :root
+        },
+        when_failed: lambda {
+          add_whole_error_message 'ユーザーIDとパスワードが一致するユーザーが存在しません。'
+          render action: :new
+        }
+      )
     else
       @form.errors.full_messages.each do |msg|
         add_whole_error_message msg
       end
+      render action: :new
     end
-    render action: :new
   end
 
   def destroy
