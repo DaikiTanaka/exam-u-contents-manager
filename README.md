@@ -41,6 +41,14 @@ bundle exec rails test test/**/*_test.rb
 open coverage/index.html
 ```
 
+## How to build document
+
+```
+bundle exec yard
+open doc/index.html
+```
+
+
 ## Services (job queues, cache servers, search engines, etc.)
 
 

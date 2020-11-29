@@ -50,3 +50,9 @@ data/*
 
 # Result of simplecov
 coverage
+
+# Documentation
+/doc/*
+!/doc/.keep
+!/doc/*.md
+/.yardoc/*

@@ -1,0 +1,9 @@
+--protected
+--no-private
+--markup markdown # markdown で書けるようになる
+#--exclude /lib/tasks # 不要なディレクトリを指定
+#--asset docs/images:images # ドキュメントで利用したい画像などがある場合
+--plugin activesupport-concern # Rails で Concern 使う場合は必須
+#--load ./docs/templates/plugin.rb # 自作プラグインがある場合
+-
+doc/plan.md
