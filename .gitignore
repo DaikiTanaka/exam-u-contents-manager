@@ -47,3 +47,6 @@ data/*
 
 # Rubymine
 .idea/*
+
+# Result of simplecov
+coverage

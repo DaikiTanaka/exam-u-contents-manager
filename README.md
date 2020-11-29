@@ -34,6 +34,13 @@ Access http://localhost:3000
 bundle exec rails test test/**/*_test.rb
 ```
 
+### Coverage
+
+```
+# run after runing the test suite.
+open coverage/index.html
+```
+
 ## Services (job queues, cache servers, search engines, etc.)
 
 
