@@ -44,9 +44,13 @@ open coverage/index.html
 ## How to build document
 
 ```
-bundle exec yard
+bundle exec yardoc 'app/**/*.rb'
 open doc/index.html
 ```
+
+### How to write documents
+
+> Cheat sheet https://gist.github.com/chetan/1827484
 
 
 ## Services (job queues, cache servers, search engines, etc.)
