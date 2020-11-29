@@ -13,6 +13,7 @@
 ## How to install
 
 ```
+yarn install --check-files
 bundle config set path 'vendor/bundle'
 bundle install
 bundle exec rails db:create db:migrate db:seed
