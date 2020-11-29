@@ -44,6 +44,7 @@ yarn-debug.log*
 
 # User images will be uploaded to here.
 data/*
+!data/.keep
 
 # Rubymine
 .idea/*
