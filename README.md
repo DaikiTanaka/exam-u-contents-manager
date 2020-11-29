@@ -13,6 +13,10 @@
 ## How to install
 
 ```
+# rbenv を利用する場合
+rbenv install 2.7.2
+rbenv local 2.7.2
+
 yarn install --check-files
 bundle config set path 'vendor/bundle'
 bundle install
